@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "github.com/manh737/go-grpc/protos";
+
+package protos;
+
+message Screen {
+  message Resolution {
+    uint32 width = 1;
+    uint32 height = 2;
+  }
+  enum Panel {
+    UNKNOWN = 0;
+    IPS = 1;
+    OLED = 2;
+  }
+  Resolution resolution = 1;
+  Panel panel = 2;
+  float size_inch = 3;
+  bool multitouch = 4;
+}
